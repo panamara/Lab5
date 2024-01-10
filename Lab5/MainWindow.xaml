@@ -1,0 +1,24 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Library Catalog" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="ApplicationCommands.Close"/>
+            </MenuItem>
+            <MenuItem Header="Каталог">
+                <MenuItem Header="Добавить книгу" Click="AddBook_Click"/>
+                <MenuItem Header="Фильтр" Click="FilterBooks_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <DataGrid Name="BookCatalog" AutoGenerateColumns="False" ItemsSource="{Binding BookList}" Margin="0,30,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}"/>
+                <DataGridTextColumn Header="Дата издания" Binding="{Binding PublicationDate}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
